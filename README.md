@@ -1,5 +1,5 @@
 # Fundamental Project
-## Core Concepts in flow control and using Loops
+## Core Concepts in flow control and using Loops.
 
 *Java application to cover core concepts.*
 
