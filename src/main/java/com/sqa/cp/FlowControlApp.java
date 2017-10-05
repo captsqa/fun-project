@@ -38,12 +38,12 @@ public class FlowControlApp {
 	}
 
 	/**
-	 * This method prints the name ofmonth using switch statement given a number
-	 * from a user
+	 * This method prints the name of month using switch statement given a
+	 * number from a user
 	 */
 	private static void determineMonthBasedOnInt() {
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("Please enter the month : ");
+		System.out.println("\n\nPlease enter the month : ");
 		String input = scanner.nextLine();
 		switch (Integer.parseInt(input)) {
 		case 1:
@@ -83,7 +83,7 @@ public class FlowControlApp {
 			System.out.println("Its December");
 			break;
 		default:
-			System.out.println("Horry!!");
+			System.out.println("Plese enter number from 1-12");
 			break;
 		}
 	}
@@ -94,25 +94,20 @@ public class FlowControlApp {
 	 */
 	private static void evalGrade() {
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("Please enter a Grades you have :");
-		String noOfGrade = scanner.nextLine();
-		int total = 0, grade;
-		for (int i = 1; i <= Integer.parseInt(noOfGrade); i++) {
-			System.out.println("Please enter subject " + i + " marks :");
-			String subject = scanner.nextLine();
-			total = total + Integer.parseInt(subject);
-		}
-		grade = total / Integer.parseInt(noOfGrade);
-		if (grade >= 90 && grade <= 100) {
-			System.out.println("You got " + grade + "A .");
-		} else if (grade >= 80 && grade <= 89) {
-			System.out.println("You got " + grade + "B .");
-		} else if (grade >= 70 && grade <= 79) {
-			System.out.println("You got " + grade + "C .");
-		} else if (grade >= 60 && grade <= 69) {
-			System.out.println("You got " + grade + "D .");
+		int total = 0, gradeInt = 0;
+		System.out.println("\n\nPlease enter subject score (out of 100):");
+		String grade = scanner.nextLine();
+		gradeInt = Integer.parseInt(grade);
+		if (gradeInt >= 90 && gradeInt <= 100) {
+			System.out.println("You got " + gradeInt + "which is A .");
+		} else if (gradeInt >= 80 && gradeInt <= 89) {
+			System.out.println("You got " + gradeInt + "which is B .");
+		} else if (gradeInt >= 70 && gradeInt <= 79) {
+			System.out.println("You got " + gradeInt + "which is C .");
+		} else if (gradeInt >= 60 && gradeInt <= 69) {
+			System.out.println("You got " + gradeInt + "which is D .");
 		} else
-			System.out.println("You got " + grade + "F .");
+			System.out.println("You got " + gradeInt + " which is F .");
 	}
 
 	/**
@@ -123,7 +118,7 @@ public class FlowControlApp {
 	 */
 	private static void evalNumberAgainst10() {
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("Please enter a number to evaluate against 10");
+		System.out.println("\n\nPlease enter a number to evaluate against 10");
 		String input = scanner.nextLine();
 		int number = Integer.parseInt(input);
 		if (number > 10) {
