@@ -34,8 +34,8 @@ public class AppBasics {
 	 *            Name of application
 	 */
 	public static void farewellUser(String name, String appName) {
-		System.out
-				.println("Thank you " + name + ", for using Basic App " + appName + "Application.\nHave a great Day!");
+		System.out.println(
+				"\nThank you " + name + ", for using Basic App " + appName + "Application.\nHave a great Day!");
 	}
 
 	/**
@@ -50,5 +50,40 @@ public class AppBasics {
 		System.out.println("Welcome to my " + appName + " Application");
 		System.out.print("Could I get your name please? ");
 		return scanner.nextLine();
+	}
+
+	/**
+	 * @param string
+	 *            Ask user a Question
+	 * @param int
+	 *            minimum range
+	 * @param int
+	 *            maximum range
+	 * @return
+	 */
+	public static int requestInt(String question, int min, int max) {
+		int resultNumber = 0;
+		String input = "";
+		boolean valid = false;
+		while (!valid) {
+			try {
+				// Ask Question
+				System.out.print(question + " ");
+				// Get Input String from user
+				input = scanner.nextLine();
+				// Parse input string into int type
+				resultNumber = Integer.parseInt(input);
+				// Evaluate valid entry
+				// Evaluate valid range
+				if (resultNumber >= min && resultNumber <= max) {
+					valid = true;
+				} else {
+					System.out.println("Please Enter number between " + min + " and " + max);
+				}
+			} catch (NumberFormatException e) {
+				System.out.println("You have not entered a valid formatted number [" + input + "]");
+			}
+		}
+		return resultNumber;
 	}
 }
